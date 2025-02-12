@@ -9,7 +9,7 @@ class Road:
 	def __init__(self):
 		self.width = SCREEN_WIDTH / 2
 		self.lanes = 4
-		self.lane_border = SCREEN_WIDTH / (self.width / self.lanes)
+		self.lane_border = SCREEN_WIDTH / self.width * 4
 		self.lane_width = self.width / self.lanes - self.lane_border
 		self.cars = []
 	
