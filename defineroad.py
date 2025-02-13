@@ -9,11 +9,11 @@ class Road:
 	def __init__(self):
 		# Don't do odd numbers
 		self.lanes = 4
-		self.lane_width = SCREEN_WIDTH / 8
+		self.lane_width = SCREEN_WIDTH / 16
 		self.lane_border_width = self.lane_width / 16
 		self.lane_border_height = SCREEN_HEIGHT / 8
 		self.lane_centers = []
-		self.speed_limit = 75
+		self.speed_limit = SCREEN_HEIGHT / 16
 		if self.lanes % 2 == 0:
 			for lane in range(round(-self.lanes / 2), round(self.lanes / 2)):
 				distance = lane + .5

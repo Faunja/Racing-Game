@@ -16,12 +16,12 @@ def draw_screen():
 		pygame.draw.rect(screen, Black, rect)
 	yellow = (255, 255, 0)
 	
-	for lane in range(Street.lanes - 1):
+	for lane in range(round(Street.lanes / 2) + 1):
 		combined_width = Street.lane_width + Street.lane_border_width
 		if lane == 0:
 			rect = (SCREEN_WIDTH / 2 - Street.lane_border_width / 2, 0, Street.lane_border_width, SCREEN_HEIGHT)
 			pygame.draw.rect(screen, yellow, rect)
-		elif lane + 1 == Street.lanes - 1:
+		elif lane + round(Street.lanes / 2) == Street.lanes:
 			rect = (SCREEN_WIDTH / 2 - Street.lane_border_width / 2 + combined_width * lane, 0, Street.lane_border_width, SCREEN_HEIGHT)
 			pygame.draw.rect(screen, yellow, rect)
 			rect = (SCREEN_WIDTH / 2 - Street.lane_border_width / 2 - combined_width * lane, 0, Street.lane_border_width, SCREEN_HEIGHT)
