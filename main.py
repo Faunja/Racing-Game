@@ -20,6 +20,7 @@ def main():
 					run = False
 			if event.type == pygame.QUIT:
 				run = False
+		Street.update_cars()
 		update_screen()
 	pygame.quit()
 main()

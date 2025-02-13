@@ -28,5 +28,9 @@ class Road:
 				information = 0
 		self.cars.append(Car(newcolor, self.speed_limit, self.lane_width))
 		self.cars[len(self.cars) - 1].assign_position(self.cars, self.lane_centers)
+	
+	def update_cars(self):
+		for car in self.cars:
+			car.drive()
 
 Street = Road()
