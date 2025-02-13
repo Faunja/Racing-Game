@@ -11,6 +11,7 @@ from drawscreen import update_screen
 
 def main():
 	run = True
+	Street.create_car()
 	while run:
 		clock.tick(FPS)
 		for event in pygame.event.get():

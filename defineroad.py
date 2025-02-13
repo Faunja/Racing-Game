@@ -13,6 +13,7 @@ class Road:
 		self.lane_border_width = self.lane_width / 16
 		self.lane_border_height = SCREEN_HEIGHT / 8
 		self.lane_centers = []
+		self.speed_limit = 75
 		if self.lanes % 2 == 0:
 			for lane in range(round(-self.lanes / 2), round(self.lanes / 2)):
 				distance = lane + .5
@@ -25,6 +26,7 @@ class Road:
 			if self.cars[information].color == newcolor:
 				newcolor = (random.randint(60, 255), random.randint(60, 255), random.randint(60, 255))
 				information = 0
-		self.cars.append(Car(newcolor))
+		self.cars.append(Car(newcolor, self.speed_limit, self.lane_width))
+		self.cars[len(self.cars) - 1].assign_position(self.cars, self.lane_centers)
 
 Street = Road()
