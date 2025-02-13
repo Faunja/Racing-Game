@@ -30,7 +30,7 @@ class Car:
 			unset_position = True
 			while unset_position:
 				self.position[0] = center_lanes[random.randint(0, len(center_lanes) - 1)]
-				self.position[1] = SCREEN_HEIGHT - self.volume[1]
+				self.position[1] = SCREEN_HEIGHT - SCREEN_HEIGHT / random.randint(1, round(SCREEN_HEIGHT / self.volume[1]))
 				for other_car in cars:
 					if other_car.color != self.color:
 						if self.detect_collision(other_car) == True:
@@ -39,7 +39,7 @@ class Car:
 							unset_position = False
 		else:
 			self.position[0] = center_lanes[random.randint(0, len(center_lanes) - 1)]
-			self.position[1] = SCREEN_HEIGHT - self.volume[1]
+			self.position[1] = SCREEN_HEIGHT - SCREEN_HEIGHT / random.randint(1, round(SCREEN_HEIGHT / self.volume[1]))
 
 	def drive(self):
 		self.position[1] -= self.speed

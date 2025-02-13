@@ -4,14 +4,14 @@
 # Licensed under the terms of the GPL 3
 # If pygame is not installed: sudo apt install python3-pygame
 # To run: python3 Racing-Game/main.py
-import pygame
+import pygame, random
 from variables import *
 from defineroad import *
+from defineplayer import *
 from drawscreen import update_screen
 
 def main():
 	run = True
-	Street.create_car()
 	while run:
 		clock.tick(FPS)
 		for event in pygame.event.get():
@@ -20,6 +20,8 @@ def main():
 					run = False
 			if event.type == pygame.QUIT:
 				run = False
+		if random.randint(1, round(FPS / 4)) == 1:
+			Street.create_car()
 		Street.update_cars()
 		update_screen()
 	pygame.quit()
