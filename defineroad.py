@@ -31,6 +31,7 @@ class Road:
 	
 	def update_cars(self):
 		for car in self.cars:
-			car.drive()
+			car.drive(self.cars)
+			car.adjust_position(self.cars[0])
 
 Street = Road()

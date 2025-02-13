@@ -20,7 +20,7 @@ def main():
 					run = False
 			if event.type == pygame.QUIT:
 				run = False
-		if random.randint(1, round(FPS / 4)) == 1:
+		if random.randint(1, FPS) == 1:
 			Street.create_car()
 		Street.update_cars()
 		update_screen()
