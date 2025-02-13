@@ -10,12 +10,13 @@ class Road:
 		# Don't do odd numbers
 		self.lanes = 4
 		self.lane_width = SCREEN_WIDTH / 8
-		self.lane_border = self.lane_width / 16
+		self.lane_border_width = self.lane_width / 16
+		self.lane_border_height = SCREEN_HEIGHT / 8
 		self.lane_centers = []
 		if self.lanes % 2 == 0:
 			for lane in range(round(-self.lanes / 2), round(self.lanes / 2)):
 				distance = lane + .5
-				self.lane_centers.append((self.lane_width + self.lane_border) * distance + SCREEN_WIDTH / 2)
+				self.lane_centers.append((self.lane_width + self.lane_border_width) * distance + SCREEN_WIDTH / 2)
 		self.cars = []
 	
 	def create_car(self):
